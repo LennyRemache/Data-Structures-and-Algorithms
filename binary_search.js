@@ -1,4 +1,5 @@
 function rec_binary_search(arr, target, start, end) {
+  // O(log(n)) time, O(n) space
   // arr must be sorted
   // recursive binary search implementation
   if (start > end) {
@@ -22,7 +23,7 @@ console.log(rec_binary_search(arr1, 12, 0, 9));
 console.log(rec_binary_search(arr2, 2, 0, 9));
 
 function binary_search(arr, target) {
-  // O(log(n))
+  // O(log(n)) time, O(1) space
   // iterative binary search implementation
   let start = 0;
   let end = arr.length - 1;
