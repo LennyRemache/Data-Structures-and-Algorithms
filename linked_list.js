@@ -81,8 +81,6 @@ class SinglyLinkedList {
       let nextNode = current.next;
       prevNode.next = newNode;
       newNode.next = nextNode;
-
-      this.length += 1;
     } else {
       return false;
     }
@@ -107,12 +105,12 @@ class SinglyLinkedList {
         } else {
           prevNode.next = current.next;
         }
+        this.length -= 1;
       }
       prevNode = current;
       current = current.next;
     }
-    this.length -= 1;
-    return current;
+    return found;
   }
 
   removeAtIndex() {}
@@ -162,4 +160,9 @@ arr.remove(2);
 console.log(arr);
 
 arr.push(4);
+console.log(arr);
+
+arr.remove(1);
+console.log(arr.remove(3));
+arr.remove(2);
 console.log(arr);
