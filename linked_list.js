@@ -65,9 +65,9 @@ class SinglyLinkedList {
 
       Takes overall O(n) time
     */
-    if (index === this.length) {
+    if (index === this.length - 1) {
       this.push(data);
-    } else if (index >= 0 && index < index.length - 1) {
+    } else if (index >= 0 && index < index.length) {
       let newNode = new Node(data);
       let current = this.head;
       let position = index;
@@ -165,4 +165,7 @@ console.log(arr);
 arr.remove(1);
 console.log(arr.remove(3));
 arr.remove(2);
+console.log(arr);
+
+arr.insert("lenny", 0);
 console.log(arr);
