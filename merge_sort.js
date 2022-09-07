@@ -8,6 +8,7 @@ function split(arr) {
   const mid = Math.floor(arr.length / 2);
   const leftHalf = arr.slice(0, mid);
   const rightHalf = arr.slice(mid, arr.length);
+  console.log(leftHalf, rightHalf);
   return { leftHalf, rightHalf };
 }
 
@@ -27,7 +28,6 @@ function merge(left, right) {
       arr.push(right.shift());
     }
   }
-
   return [...arr, ...left, ...right];
 }
 
