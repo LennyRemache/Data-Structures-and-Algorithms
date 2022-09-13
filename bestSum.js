@@ -15,6 +15,7 @@ function bestSum(targetSum, numbers, memo = {}) {
       }
     }
   }
+  memo[targetSum] = shortest;
   return shortest;
 }
 
