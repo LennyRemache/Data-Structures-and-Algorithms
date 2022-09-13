@@ -9,12 +9,13 @@ function bestSum(targetSum, numbers, memo = {}) {
     const remainder = targetSum - num;
     const output = bestSum(remainder, numbers, memo);
     if (output !== null) {
-      memo[targetSum] = [...output, num];
-      if (shortest === null || memo[targetSum].length < shortest.length) {
-        shortest = memo[targetSum];
+      const combination = [...output, num];
+      if (shortest === null || combination.length < shortest.length) {
+        shortest = combination;
       }
     }
   }
+
   memo[targetSum] = shortest;
   return shortest;
 }
