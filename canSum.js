@@ -4,9 +4,13 @@ function canSum(targetSum, numbers, memo = {}) {
   if (targetSum < 0) return false; // no more numbers available to reduce target to 0 exactly.
   for (let num of numbers) {
     const remainder = targetSum - num;
-    memo[remainder] = canSum(remainder, numbers, memo);
-    if (memo[remainder] === true) return true;
+    if (canSum(remainder, numbers, memo) === true) {
+      memo[targetSum] = true;
+      return true;
+    }
   }
+
+  memo[targetSum] = false;
   return false;
 }
 
